@@ -78,7 +78,6 @@
         .row{display:flex;gap:10px;flex-wrap:wrap}
         .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;cursor:pointer;color:#fff;background:linear-gradient(120deg,var(--accent),var(--accent2));font-weight:800;box-shadow:0 10px 18px rgba(0,0,0,.25)}
         .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-        .btn.whats{background:#25D366;color:#083d1a}
         .out{margin-top:10px;padding:14px;border-radius:12px;background:var(--card);border:1px dashed var(--border);white-space:pre-wrap}
         .muted{color:var(--muted)}
         .stat{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800}
@@ -112,7 +111,7 @@
                         Instrumento profissional para triagem de traços narcisistas com quatro testes validados ou amplamente utilizados em pesquisa: Inventário de Narcisismo – versão breve (NPI-16), Inventário de Personalidade do DSM-5 – Forma Breve (PID-5-BF, 25 itens), Inventário
                         dos Cinco Fatores do Narcisismo – Forma Curta (FFNI-SF, 60 itens) e uma autoavaliação baseada no DSM-5-TR por meio da Mini International Neuropsychiatric Interview (MINI). Leia cada item com atenção, responda com sinceridade e,
                         ao final,
-                        <strong>gere o relatório e envie ao seu psicólogo</strong>.
+                        <strong>conclua todos os itens para análise clínica</strong>.
                     </p>
                 </div>
                 <label class="toggle" title="Alternar modo claro/escuro">
@@ -127,7 +126,7 @@
                     <li>Responda <em>todos</em> os itens de cada teste. Se algum item ficar sem resposta, ele será destacado e a correção não será realizada até que seja preenchido.</li>
                     <li>No <strong>Inventário de Narcisismo – versão breve (NPI-16)</strong>, leia cada <strong>afirmação individual</strong> e marque <strong>Sim</strong> ou <strong>Não</strong> conforme descreva você.</li>
                     <li>Nos demais testes — <strong>PID-5-BF</strong>, <strong>FFNI-SF</strong> e <strong>MINI</strong> — use a escala apresentada em cada item para indicar o quanto a frase se aplica a você.</li>
-                    <li>Ao final, clique em <strong>Gerar Relatório Integrado</strong>. Você poderá <strong>copiar o resultado</strong> e também <strong>enviá-lo ao seu psicólogo</strong> usando o botão do WhatsApp.</li>
+                    <li>Ao final, conclua todos os itens. A análise do conjunto será realizada pelo psicólogo responsável.</li>
                 </ol>
             </div>
         </header>
@@ -222,8 +221,7 @@
             <div class="row">
                 <button class="btn" id="gen-report">Gerar relatório integrado</button>
                 <button class="btn secondary" id="copy-report">Copiar relatório</button>
-                <button class="btn whats" id="send-whats">Enviar ao meu psicólogo</button>
-            </div>
+</div>
             <div id="report" class="out para" aria-live="polite"></div>
 
             <details style="margin-top:8px">
@@ -628,15 +626,7 @@
             await navigator.clipboard.writeText(reportEl.textContent);
             alert('Relatório copiado.');
           };
-        
-          document.getElementById('send-whats').onclick = ()=>{
-            if(!reportEl.textContent.trim()){ alert('Gere o relatório antes de enviar.'); return; }
-            const nome = idVal('nome')||'Paciente';
-            const payload = `Bateria – Traços Narcisistas – ${nome}\n\n${reportEl.textContent}`;
-            window.open('https://wa.me/5535984640729?text='+encodeURIComponent(payload),'_blank');
-          };
-        
-          // Feedback visual: remover erro ao alterar
+// Feedback visual: remover erro ao alterar
           document.addEventListener('change',(e)=>{
             const t=e.target;
             if(t.classList.contains('invalid')&&t.value!==''){ t.classList.remove('invalid'); }
