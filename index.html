@@ -131,6 +131,8 @@
             </div>
         </header>
 
+        <form id="screeningForm" novalidate onsubmit="return false;">
+
         <!-- Identificação -->
         <section class="card">
             <h2>Identificação</h2>
@@ -168,8 +170,8 @@
             </p>
             <div id="npi-items" class="grid"></div>
             <div class="row" style="margin-top:10px">
-                <button class="btn" id="npi-score">Corrigir NPI-16</button>
-                <button class="btn secondary" id="npi-clear">Limpar</button>
+                <button type="button" class="btn" id="npi-score">Corrigir NPI-16</button>
+                <button type="button" class="btn secondary" id="npi-clear">Limpar</button>
             </div>
             <div id="npi-out" class="out" aria-live="polite"></div>
         </section>
@@ -182,8 +184,8 @@
             </div>
             <div id="pid-items" class="grid"></div>
             <div class="row" style="margin-top:10px">
-                <button class="btn" id="pid-score">Corrigir PID-5-BF</button>
-                <button class="btn secondary" id="pid-clear">Limpar</button>
+                <button type="button" class="btn" id="pid-score">Corrigir PID-5-BF</button>
+                <button type="button" class="btn secondary" id="pid-clear">Limpar</button>
             </div>
             <div id="pid-out" class="out" aria-live="polite"></div>
         </section>
@@ -195,8 +197,8 @@
             </div>
             <div id="ffni-items" class="grid"></div>
             <div class="row" style="margin-top:10px">
-                <button class="btn" id="ffni-score">Corrigir FFNI-SF</button>
-                <button class="btn secondary" id="ffni-clear">Limpar</button>
+                <button type="button" class="btn" id="ffni-score">Corrigir FFNI-SF</button>
+                <button type="button" class="btn secondary" id="ffni-clear">Limpar</button>
             </div>
             <div id="ffni-out" class="out" aria-live="polite"></div>
         </section>
@@ -211,8 +213,8 @@
             </p>
             <div id="mini-items" class="grid"></div>
             <div class="row" style="margin-top:10px">
-                <button class="btn" id="mini-score">Corrigir MINI (DSM-5-TR)</button>
-                <button class="btn secondary" id="mini-clear">Limpar</button>
+                <button type="button" class="btn" id="mini-score">Corrigir MINI (DSM-5-TR)</button>
+                <button type="button" class="btn secondary" id="mini-clear">Limpar</button>
             </div>
             <div id="mini-out" class="out" aria-live="polite"></div>
         </section>
@@ -223,8 +225,8 @@
                 <h2 style="margin:0">Relatório Integrado</h2>
             </div>
             <div class="row">
-                <button class="btn" id="gen-report">Gerar relatório integrado</button>
-                <button class="btn secondary" id="copy-report">Copiar relatório</button>
+                <button type="button" class="btn" id="gen-report">Gerar relatório integrado</button>
+                <button type="button" class="btn secondary" id="copy-report">Copiar relatório</button>
 </div>
             <div id="report" class="out para" aria-live="polite"></div>
 
@@ -236,6 +238,8 @@
                 </p>
             </details>
         </section>
+
+        </form>
 
         <footer>
             <div>Richelmy Murta • Psicólogo Clínico</div>
